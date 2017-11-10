@@ -1,0 +1,8 @@
+sudo: true
+dist: trusty
+
+jobs:
+  include:
+    - stage: Build Docker Image
+      script:
+      - docker build -t jakobchr/fog:1.5 .

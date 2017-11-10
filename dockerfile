@@ -11,5 +11,5 @@ RUN apt-get update \
     tar tftp-hpa tftpd-hpa unzip vsftpd wget xinetd zlib1g
 
 
-COPY ./source ./source
-RUN cd source/bin && ./installfog.sh -y && cd ../.. && rm -r source
+COPY ./fogproject ./fogproject
+RUN cd fogproject/bin && ./installfog.sh -y && cd ../.. && rm -r fogproject
