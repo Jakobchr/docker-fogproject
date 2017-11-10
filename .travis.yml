@@ -5,4 +5,7 @@ jobs:
   include:
     - stage: Build Docker Image
       script:
-      - docker build -t jakobchr/fog:1.5 .
+      - docker login -u=jakobchr -p="$DOCKER_PASSWORD"
+      - docker build -t --cache-from jakobchr/fogproject:latest jakobchr/fogproject:latest .
+      - docker images
+      - docker push jakobchr/fogproject
