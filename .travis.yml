@@ -7,6 +7,7 @@ jobs:
       before_script:
       - docker login -u=jakobchr -p="$DOCKER_PASSWORD"
       script:
+      - docker pull jakobchr/fogproject:latest
       - docker build --cache-from jakobchr/fogproject:latest -t jakobchr/fogproject:latest .
       - docker images
       after_success:
