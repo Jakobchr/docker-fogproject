@@ -4,8 +4,9 @@ dist: trusty
 jobs:
   include:
     - stage: Build Docker Image
-      script:
+      before_script:
       - docker login -u=jakobchr -p="$DOCKER_PASSWORD"
+      script:
       - docker build --cache-from jakobchr/fogproject:latest -t jakobchr/fogproject:latest .
       - docker images
       after_success:
